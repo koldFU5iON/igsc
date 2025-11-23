@@ -34,6 +34,7 @@ The **International Game Studio Classification (IGSC)** provides a formal, multi
 ### Classification Dimensions
 
 **Structural (Production Context):**
+
 | Dimension | Tiers |
 |-----------|-------|
 | Team Size | Micro (1–5) / Small (6–20) / Mid (21–80) / Large (80+) |

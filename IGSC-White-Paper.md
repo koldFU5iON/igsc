@@ -10,14 +10,14 @@
 
 ## Executive Summary
 
-The video game industry relies on informal labels — Indie, AA, AAA — to classify studios and projects. These terms are culturally defined rather than structurally defined, leading to inconsistency, unfair competition, and a lack of transparency.
+The video game industry relies on informal labels (Indie, AA, AAA) to classify studios and projects. These terms are culturally defined rather than structurally defined, leading to inconsistency, unfair competition, and a lack of transparency.
 
 The **International Game Studio Classification (IGSC)** proposes a formal, multi-dimensional taxonomy that classifies studios based on clear, verifiable criteria across two axes: **Structural Context** (what resources a studio has) and **Outcome Metrics** (what results they achieve). The framework is:
 
-- **Voluntary** — studios self-classify
-- **Transparent** — criteria are public and consistent
-- **Non-invasive** — no sensitive financial disclosure required
-- **Lifecycle-aware** — studios can reclassify as they grow
+- **Voluntary**: studios self-classify
+- **Transparent**: criteria are public and consistent
+- **Non-invasive**: no sensitive financial disclosure required
+- **Lifecycle-aware**: studios can reclassify as they grow
 
 This white paper outlines the problem, presents the framework, and invites adoption by platforms, awards bodies, publishers, and the broader industry.
 
@@ -25,22 +25,37 @@ This white paper outlines the problem, presents the framework, and invites adopt
 
 ## Table of Contents
 
-1. [The Problem](#1-the-problem)
-2. [Why Current Labels Fail](#2-why-current-labels-fail)
-3. [The Framework](#3-the-framework)
-4. [Classification Dimensions](#4-classification-dimensions)
-5. [Tier Definitions](#5-tier-definitions)
-6. [How Classification Works](#6-how-classification-works)
-7. [Use Cases](#7-use-cases)
-8. [Design Principles](#8-design-principles)
-9. [Governance & Evolution](#9-governance--evolution)
-10. [Call to Adoption](#10-call-to-adoption)
+1. [Introduction](#1-introduction)
+2. [The Problem](#2-the-problem)
+3. [Why Current Labels Fail](#3-why-current-labels-fail)
+4. [The Framework](#4-the-framework)
+5. [Classification Dimensions](#5-classification-dimensions)
+6. [Tier Definitions](#6-tier-definitions)
+7. [How Classification Works](#7-how-classification-works)
+8. [Use Cases](#8-use-cases)
+9. [Supporting Research & Comparative Analysis](#9-supporting-research--comparative-analysis)
+10. [Design Principles](#10-design-principles)
+11. [Governance & Evolution](#11-governance--evolution)
+12. [Call to Adoption](#12-call-to-adoption)
+13. [References](#13-references)
 
 ---
 
-## 1. The Problem
+## 1. Introduction
 
-The game industry has no standard system for classifying studios or projects. The labels we use — Indie, AA, AAA — emerged informally and mean different things to different people.
+The video game industry has grown from a niche hobby into a global entertainment sector generating over $180 billion annually [CITATION NEEDED: recent Newzoo or similar market report, 2023-2024]. Yet despite this maturation, the industry lacks fundamental infrastructure that other creative sectors take for granted: a standardised way to classify and compare studios.
+
+Film has its budget tiers and production categories. Music has major labels, independent labels, and self-released artists with clear distinctions. Publishing distinguishes between the Big Five, mid-size houses, and small presses. The game industry, by contrast, relies on vague, culturally-defined terms that emerged organically and have never been formalised.
+
+The terms "Indie," "AA," and "AAA" originated in the early 2000s as the industry began distinguishing between different scales of production [CITATION NEEDED: industry history source on origin of these terms]. Initially useful shorthand, these labels have become increasingly inadequate as the industry has diversified. A solo developer working from their bedroom, a 30-person studio with venture capital backing, and a 15-person team bootstrapping their first commercial release might all describe themselves as "indie," despite having fundamentally different resources, constraints, and contexts.
+
+This terminology gap creates practical problems across the industry: unfair competition in awards, unclear eligibility for grants, inconsistent media coverage, and difficulty for studios to position themselves accurately. The International Game Studio Classification (IGSC) addresses this gap by proposing a formal, multi-dimensional taxonomy built on verifiable structural criteria rather than subjective cultural labels.
+
+---
+
+## 2. The Problem
+
+The game industry has no standard system for classifying studios or projects. The labels we use, Indie, AA, and AAA, emerged informally and mean different things to different people.
 
 This absence of structure creates real problems:
 
@@ -55,11 +70,11 @@ The industry deserves better.
 
 ---
 
-## 2. Why Current Labels Fail
+## 3. Why Current Labels Fail
 
-### 2.1 Definitions Are Inconsistent
+### 3.1 Definitions Are Inconsistent
 
-There is no universal agreement on what Indie, AA, or AAA mean. Different sources cite different thresholds:
+There is no universal agreement on what Indie, AA, or AAA mean. Different sources cite different thresholds [CITATION NEEDED: examples of conflicting definitions from industry sources, e.g., GDC talks, industry articles, publisher guidelines]:
 
 - "Indie" might mean budget under $1M, team under 10, or simply "no publisher"
 - "AA" ranges from "a few million" to "tens of millions" depending on who you ask
@@ -67,7 +82,7 @@ There is no universal agreement on what Indie, AA, or AAA mean. Different source
 
 The same studio could be classified differently depending on which criteria you prioritise.
 
-### 2.2 Labels Conflate Multiple Dimensions
+### 3.2 Labels Conflate Multiple Dimensions
 
 Current classifications muddle together distinct variables:
 
@@ -82,7 +97,7 @@ Current classifications muddle together distinct variables:
 
 A single label cannot meaningfully capture all of these. A 40-person studio with publisher funding is fundamentally different from a solo developer, yet both might call themselves "indie."
 
-### 2.3 Wildly Different Studios Get Lumped Together
+### 3.3 Wildly Different Studios Get Lumped Together
 
 The current system creates absurd groupings:
 
@@ -90,16 +105,16 @@ The current system creates absurd groupings:
 - A $5M project and a $25M project both called "AA"
 - Studios with radically different resources competing in the same category
 
-### 2.4 Unfair Competition
+### 3.4 Unfair Competition
 
 Without clear classification:
 
 - Awards pit mismatched studios against each other
-- "Best Indie Game" becomes meaningless when entries range from solo projects to 50-person teams
+- "Best Indie Game" becomes meaningless when entries range from solo projects to 50-person teams [CITATION NEEDED: examples of award category controversies or discussions about indie eligibility]
 - Well-funded studios labelled "indie" crowd out genuine small creators
-- Backlash against "fake indies" creates identity friction
+- Backlash against "fake indies" creates identity friction [CITATION NEEDED: industry discussion on "fake indie" controversies, e.g., developer community debates]
 
-### 2.5 No Lifecycle Tracking
+### 3.5 No Lifecycle Tracking
 
 Current labels are static. There is no mechanism to:
 
@@ -110,14 +125,14 @@ Current labels are static. There is no mechanism to:
 
 ---
 
-## 3. The Framework
+## 4. The Framework
 
 The IGSC addresses these failures through a **two-layer, multi-dimensional approach**.
 
 Rather than a single fuzzy label, studios are classified across:
 
-1. **Structural Classification** — what resources the studio has while building
-2. **Outcome Classification** — what results they achieve after release
+1. **Structural Classification**: what resources the studio has while building
+2. **Outcome Classification**: what results they achieve after release
 
 This creates a matrix that captures both context and performance, enabling fair comparison and meaningful benchmarking.
 
@@ -129,9 +144,9 @@ Studios should not need to reveal exact funding or revenue. Classification relie
 
 ---
 
-## 4. Classification Dimensions
+## 5. Classification Dimensions
 
-### 4.1 Structural Classification (Production Context)
+### 5.1 Structural Classification (Production Context)
 
 Structural classification focuses on what resources the studio has while building. These variables are relatively stable and define the production context.
 
@@ -143,9 +158,9 @@ Structural classification focuses on what resources the studio has while buildin
 | **External Support** | Use of outsourcing, co-dev, marketing partners | None / Limited / Significant |
 | **Production Scope** | Ambition and scale of the project | Small / Medium / Large / Massive |
 
-### 4.2 Outcome Classification (Success Metrics)
+### 5.2 Outcome Classification (Success Metrics)
 
-Outcome classification reflects performance after a game is launched. This enables reclassification over time — a lifecycle rather than a static identity.
+Outcome classification reflects performance after a game is launched. This enables reclassification over time, creating a lifecycle rather than a static identity.
 
 | Variable | Description | Example Bands |
 |----------|-------------|---------------|
@@ -156,9 +171,9 @@ Outcome classification reflects performance after a game is launched. This enabl
 
 ---
 
-## 5. Tier Definitions
+## 6. Tier Definitions
 
-### 5.1 Team Size Tiers
+### 6.1 Team Size Tiers
 
 | Tier | Team Size | Typical Characteristics |
 |------|-----------|------------------------|
@@ -167,7 +182,7 @@ Outcome classification reflects performance after a game is launched. This enabl
 | **Mid** | 21–80 | Multiple concurrent projects, departmental structure |
 | **Large** | 80+ | Full production capabilities, significant infrastructure |
 
-### 5.2 Ownership Types
+### 6.2 Ownership Types
 
 | Type | Definition |
 |------|------------|
@@ -175,7 +190,7 @@ Outcome classification reflects performance after a game is launched. This enabl
 | **Affiliated** | Independent studio with significant publisher funding, support, or partnership |
 | **Owned** | Studio owned by a platform holder or major publisher |
 
-### 5.3 Production Scope
+### 6.3 Production Scope
 
 | Scope | Indicators |
 |-------|------------|
@@ -184,7 +199,7 @@ Outcome classification reflects performance after a game is launched. This enabl
 | **Large** | Complex systems, significant playtime, high production values |
 | **Massive** | Industry-leading scope, multi-year development, AAA-level investment |
 
-### 5.4 Combined Classification Examples
+### 6.4 Combined Classification Examples
 
 Studios are classified by combining dimensions:
 
@@ -199,9 +214,9 @@ This replaces vague labels with precise, comparable classifications.
 
 ---
 
-## 6. How Classification Works
+## 7. How Classification Works
 
-### 6.1 Self-Classification Process
+### 7.1 Self-Classification Process
 
 1. **Studio completes a classification form** with basic information:
    - Team size (headcount bracket)
@@ -225,7 +240,7 @@ This replaces vague labels with precise, comparable classifications.
    - Growth is tracked and celebrated
    - Historical classifications preserved for context
 
-### 6.2 What Studios Provide
+### 7.2 What Studios Provide
 
 | Required | Optional |
 |----------|----------|
@@ -234,7 +249,7 @@ This replaces vague labels with precise, comparable classifications.
 | Primary funding source | Links to store pages |
 | Production scope | Press kit |
 
-### 6.3 What Studios Do NOT Provide
+### 7.3 What Studios Do NOT Provide
 
 - Exact revenue figures
 - Detailed financial statements
@@ -243,9 +258,9 @@ This replaces vague labels with precise, comparable classifications.
 
 ---
 
-## 7. Use Cases
+## 8. Use Cases
 
-### 7.1 Awards and Showcases
+### 8.1 Awards and Showcases
 
 **Problem:** "Best Indie Game" categories pit solo developers against 40-person funded studios.
 
@@ -256,7 +271,7 @@ This replaces vague labels with precise, comparable classifications.
 
 Fair competition within peer groups.
 
-### 7.2 Publisher and Investor Scouting
+### 8.2 Publisher and Investor Scouting
 
 **Problem:** Difficult to segment and scout studios meaningfully.
 
@@ -266,7 +281,7 @@ Fair competition within peer groups.
 
 Structured discovery.
 
-### 7.3 Grant Programmes and Funding
+### 8.3 Grant Programmes and Funding
 
 **Problem:** Unclear eligibility; mismatched applicants.
 
@@ -274,7 +289,7 @@ Structured discovery.
 - "This grant is for IGSC Micro and Small / Independent studios only"
 - Clear criteria, less ambiguity.
 
-### 7.4 Industry Analysis and Reporting
+### 8.4 Industry Analysis and Reporting
 
 **Problem:** Inconsistent segment definitions across reports.
 
@@ -283,7 +298,7 @@ Structured discovery.
 - Trend analysis by tier
 - Meaningful benchmarking
 
-### 7.5 Studio Self-Understanding
+### 8.5 Studio Self-Understanding
 
 **Problem:** Studios unsure how to position themselves.
 
@@ -295,43 +310,92 @@ Structured discovery.
 
 ---
 
-## 8. Design Principles
+## 9. Supporting Research & Comparative Analysis
 
-The IGSC is built on these non-negotiable principles:
+This section examines existing approaches to studio and project classification within gaming and adjacent creative industries, providing context for the IGSC framework's design decisions.
 
-### 8.1 Voluntary Participation
+### 9.1 Industry Context
 
-Classification is opt-in. Studios choose to participate and can withdraw at any time. No studio is classified without their consent.
+The game industry's lack of standardised classification stands in contrast to other creative sectors:
 
-### 8.2 No Sensitive Disclosure
+**Film Industry:** Motion pictures are classified by budget tiers (micro-budget, low-budget, mid-budget, tentpole) with generally accepted thresholds [CITATION NEEDED: film industry budget classification source]. The Motion Picture Association provides content ratings, while production context is communicated through distributor relationships and marketing positioning.
 
-Studios never need to reveal exact funding, revenue, or confidential business information. All inputs use safe, bracketed ranges.
+**Music Industry:** The distinction between major labels, independent labels, and self-released artists is well-established, with trade organisations like IMPALA (Independent Music Companies Association) providing formal definitions for "independent" status [CITATION NEEDED: IMPALA or similar trade body definition].
 
-### 8.3 Transparent Criteria
+**Publishing Industry:** Book publishing distinguishes between the "Big Five" (formerly Big Six) publishers, mid-size houses, small presses, and self-publishing, with clear structural differences understood across the industry [CITATION NEEDED: publishing industry structure source].
 
-The classification methodology is fully public. Any studio can understand exactly how they would be classified before participating.
+### 9.2 Existing Game Industry Approaches
 
-### 8.4 Neutral Language
+Several organisations have attempted partial solutions to classification:
 
-Tiers are descriptive, not hierarchical. "Micro" is not inferior to "Large" — they are different contexts. The framework avoids value judgements.
+**Platform-Specific Programmes:** Steam, PlayStation, Xbox, and Nintendo each maintain their own developer programmes with internal tiers, though these classifications are proprietary and inconsistent across platforms [CITATION NEEDED: examples of platform developer programmes and their tier structures].
 
-### 8.5 Lifecycle Awareness
+**Trade Organisations:** Bodies such as IGDA (International Game Developers Association) and regional equivalents provide community support but have not established formal classification standards [CITATION NEEDED: IGDA or similar organisation's approach to studio definitions].
 
-Classification is not permanent. Studios grow, circumstances change. The IGSC supports reclassification and tracks evolution over time.
+**Awards Bodies:** The Game Awards, BAFTA Games, and similar organisations have experimented with categories like "Best Independent Game" but apply inconsistent eligibility criteria [CITATION NEEDED: comparison of major awards' indie game eligibility criteria].
 
-### 8.6 Global Applicability
+**Market Research Firms:** Newzoo, Sensor Tower, and similar analysts use varying definitions when segmenting the market by studio size [CITATION NEEDED: examples of market research firm definitions for indie/AA/AAA].
 
-The framework works across regions, accounting for cost variations. A 10-person studio in Eastern Europe and a 10-person studio in San Francisco are both "Small" — budget thresholds are secondary to structural reality.
+### 9.3 Academic and Industry Research
+
+Limited formal research exists on game studio classification:
+
+- Studies on indie game development have noted definitional inconsistency as a barrier to meaningful analysis [CITATION NEEDED: academic study on indie game definitions]
+- GDC State of the Industry surveys collect data on studio size but do not propose standardised classification [CITATION NEEDED: GDC survey methodology]
+- Industry commentary frequently highlights the "indie identity" debate without proposing structural solutions [CITATION NEEDED: games journalism on indie definition debates, e.g., GamesIndustry.biz, Gamasutra/GameDeveloper articles]
+
+### 9.4 Why Existing Approaches Fall Short
+
+Current approaches share common limitations:
+
+| Approach | Limitation |
+|----------|------------|
+| Platform programmes | Proprietary, platform-specific, not transferable |
+| Trade organisations | Community-focused, not classification-focused |
+| Awards bodies | Ad-hoc definitions, inconsistent year-to-year |
+| Market research | Internal methodologies, not publicly standardised |
+
+The IGSC addresses these gaps by providing an open, platform-agnostic, multi-dimensional framework with transparent criteria.
 
 ---
 
-## 9. Governance & Evolution
+## 10. Design Principles
 
-### 9.1 Current Governance
+The IGSC is built on these non-negotiable principles:
+
+### 10.1 Voluntary Participation
+
+Classification is opt-in. Studios choose to participate and can withdraw at any time. No studio is classified without their consent.
+
+### 10.2 No Sensitive Disclosure
+
+Studios never need to reveal exact funding, revenue, or confidential business information. All inputs use safe, bracketed ranges.
+
+### 10.3 Transparent Criteria
+
+The classification methodology is fully public. Any studio can understand exactly how they would be classified before participating.
+
+### 10.4 Neutral Language
+
+Tiers are descriptive, not hierarchical. "Micro" is not inferior to "Large"; they are different contexts. The framework avoids value judgements.
+
+### 10.5 Lifecycle Awareness
+
+Classification is not permanent. Studios grow, circumstances change. The IGSC supports reclassification and tracks evolution over time.
+
+### 10.6 Global Applicability
+
+The framework works across regions, accounting for cost variations. A 10-person studio in Eastern Europe and a 10-person studio in San Francisco are both "Small"; budget thresholds are secondary to structural reality.
+
+---
+
+## 11. Governance & Evolution
+
+### 11.1 Current Governance
 
 The IGSC is maintained by its creator as an open standard. The framework documentation is publicly available, and feedback is welcomed.
 
-### 9.2 Evolution Process
+### 11.2 Evolution Process
 
 The framework will evolve as the industry changes:
 
@@ -340,7 +404,7 @@ The framework will evolve as the industry changes:
 - **Version control** with clear changelogs
 - **Backward compatibility** considered for existing classifications
 
-### 9.3 Future Governance Options
+### 11.3 Future Governance Options
 
 As adoption grows, governance may evolve to include:
 
@@ -352,7 +416,7 @@ The priority is adoption first, formalised governance second.
 
 ---
 
-## 10. Call to Adoption
+## 12. Call to Adoption
 
 The IGSC is available for adoption by:
 
@@ -388,16 +452,50 @@ The IGSC is available for adoption by:
 
 ---
 
+## 13. References
+
+*This section will be populated with full citations as the whitepaper is finalised. Sources are currently flagged with [CITATION NEEDED] throughout the document.*
+
+### Industry Data and Market Reports
+
+- [CITATION NEEDED: Newzoo Global Games Market Report 2023-2024 for market size figures]
+- [CITATION NEEDED: GDC State of the Industry Survey methodology and findings]
+
+### Comparative Industry Standards
+
+- [CITATION NEEDED: Film industry budget tier definitions and sources]
+- [CITATION NEEDED: IMPALA definition of independent music company]
+- [CITATION NEEDED: Publishing industry "Big Five" structure documentation]
+
+### Game Industry Classification Attempts
+
+- [CITATION NEEDED: The Game Awards eligibility criteria for Best Independent Game]
+- [CITATION NEEDED: BAFTA Games Awards category definitions]
+- [CITATION NEEDED: Platform developer programme documentation (Steam, PlayStation, Xbox, Nintendo)]
+
+### Academic and Industry Commentary
+
+- [CITATION NEEDED: Academic studies on indie game definitions and development]
+- [CITATION NEEDED: Games journalism discussing "What is an indie game?" debates]
+- [CITATION NEEDED: Historical sources on origin of AAA/AA/Indie terminology]
+
+### Trade Organisation Resources
+
+- [CITATION NEEDED: IGDA resources on studio definitions or developer categories]
+- [CITATION NEEDED: Regional trade body definitions (TIGA, EGDF, etc.)]
+
+---
+
 ## License
 
 This work is licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
 
 You are free to:
-- **Share** — copy and redistribute in any medium or format
-- **Adapt** — remix, transform, and build upon the material for any purpose, including commercially
+- **Share**: copy and redistribute in any medium or format
+- **Adapt**: remix, transform, and build upon the material for any purpose, including commercially
 
 Under the following terms:
-- **Attribution** — You must give appropriate credit to IGSC and Devon Stanton
+- **Attribution**: You must give appropriate credit to IGSC and Devon Stanton
 
 ---
 
@@ -410,4 +508,4 @@ Creator, International Game Studio Classification (IGSC)
 
 ---
 
-*International Game Studio Classification (IGSC) — Bringing clarity to an industry that deserves better.*
+*International Game Studio Classification (IGSC): Bringing clarity to an industry that deserves better.*

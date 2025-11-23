@@ -15,6 +15,30 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [0.2.0] - 2025-11-23
+
+### Added
+- New Introduction/Context section with industry landscape and terminology history
+- New Supporting Research & Comparative Analysis section with four subsections:
+  - Industry Context (film, music, publishing comparisons)
+  - Existing Game Industry Approaches (platforms, trade orgs, awards, market research)
+  - Academic and Industry Research
+  - Why Existing Approaches Fall Short (comparison table)
+- New References section with structured placeholder categories
+- 15+ [CITATION NEEDED] flags with guidance on appropriate source types
+
+### Changed
+- Table of Contents updated to reflect 13 sections (previously 10)
+- All sections renumbered to accommodate new Introduction section
+- Replaced 11 em dashes with appropriate punctuation (colons, semicolons, parentheses)
+- Document structure now fully aligns with White Paper Construction Guide
+
+### Notes
+- Citation flags are placeholders requiring research to populate
+- Supporting Research section framework needs expansion with actual findings
+
+---
+
 ## [0.1.0] - 2025-11-23
 
 ### Added
