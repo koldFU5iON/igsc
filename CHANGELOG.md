@@ -15,6 +15,30 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [0.3.1] - 2025-11-24
+
+### Added
+- Comprehensive citation coverage throughout IGSC-White-Paper.md:
+  - **Introduction**: Newzoo 2024 market size ($188B), Video Game History Foundation on AAA/indie/AA term origins (Orland, 2024)
+  - **Section 3.1**: Humble Games GDC Vault talk (2022), Dan Pearce/IGN quote
+  - **Section 3.4**: Engadget, PC Gamer, Digital Trends coverage of Dave the Diver controversy (2023); director Jaeho Hwang quote via VGC
+  - **Section 9.1**: SAG-AFTRA budget tier definitions, AIM/IMPALA independent label criteria, WordsRated Big Five statistics
+  - **Section 9.2**: Steam Direct, ID@Xbox, PlayStation Partners, Nintendo Developer Portal details; IGDA DSS definition; The Game Awards and BAFTA eligibility criteria; Newzoo and Gamalytic classification methodologies
+  - **Section 9.3**: Garda & Grabarczyk (2016) Game Studies article, Juul *Handmade Pixels* MIT Press (2019), GDC survey methodology, Game Developer magazine quotes
+  - **Section 13**: Full References section populated with all citations
+
+### Changed
+- Section 9.2 platform programmes description clarified: platforms use unified programmes, not formal tiered systems
+- Version bumped to 0.3.1
+
+### Fixed
+- All [CITATION NEEDED] markers in document body resolved with scholarly and industry sources
+
+### Known Issues
+- Document contains duplicate content (whitepaper text appears twice)—flagged for cleanup
+
+---
+
 ## [0.3.0] - 2025-11-24
 
 ### Added
