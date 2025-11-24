@@ -15,6 +15,30 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ---
 
+## [0.3.0] - 2025-11-24
+
+### Added
+- New Section 9.4: HushCrasher Classification System (HCS) comparative analysis
+  - Overview of HCS methodology (credits length + disk size clustering)
+  - Comparison table: IGSC vs HCS across key dimensions
+  - Analysis of complementary approaches
+- New Section 11.1: How Standards Gain Authority
+  - ESRB and PEGI adoption model analogy
+  - Network effects explanation for standard adoption
+- Second Core Principle in Section 4: "Classification must be prospective, not just retrospective"
+- HCS citations to References section (Mayerowitz & Belzanne, 2025)
+
+### Changed
+- Section 4 "Core Principle" renamed to "Core Principles" (now two principles)
+- Section 11 subsections renumbered (11.1-11.4 instead of 11.1-11.3)
+- Version bumped to 0.3.0
+
+### Notes
+- Key differentiator established: IGSC is prospective (any development stage), HCS is retrospective (post-release only)
+- HCS acknowledged as complementary market analysis tool, not competing framework
+
+---
+
 ## [0.2.0] - 2025-11-23
 
 ### Added

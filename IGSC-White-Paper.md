@@ -1,7 +1,7 @@
 # International Game Studio Classification (IGSC)
 ## A Multi-Dimensional Taxonomy for Game Studios and Projects
 
-**Version:** 0.1.0
+**Version:** 0.3.0
 **Author:** Devon Stanton
 **Date:** November 2025
 **License:** CC BY 4.0
@@ -136,11 +136,15 @@ Rather than a single fuzzy label, studios are classified across:
 
 This creates a matrix that captures both context and performance, enabling fair comparison and meaningful benchmarking.
 
-### Core Principle
+### Core Principles
 
 > **Classification must be voluntary, verifiable, and based on proxy metrics rather than confidential financial disclosure.**
 
 Studios should not need to reveal exact funding or revenue. Classification relies on safe, non-sensitive bands and transparent structural variables.
+
+> **Classification must be prospective, not just retrospective.**
+
+Unlike systems that classify games after release based on output metrics, IGSC classifies studios at any stage: before development begins, during production, or after release. This enables practical use cases that retrospective systems cannot support: grant eligibility determination, award category placement, publisher scouting, and studio self-positioning. A studio can be classified on day one, not just after shipping.
 
 ---
 
@@ -344,7 +348,34 @@ Limited formal research exists on game studio classification:
 - GDC State of the Industry surveys collect data on studio size but do not propose standardised classification [CITATION NEEDED: GDC survey methodology]
 - Industry commentary frequently highlights the "indie identity" debate without proposing structural solutions [CITATION NEEDED: games journalism on indie definition debates, e.g., GamesIndustry.biz, Gamasutra/GameDeveloper articles]
 
-### 9.4 Why Existing Approaches Fall Short
+### 9.4 The HushCrasher Classification System (HCS)
+
+The most significant recent attempt at game classification is the HushCrasher Classification System (HCS 1.0), developed by Antoine Mayerowitz and Julie Belzanne and published in 2024-2025 (Mayerowitz & Belzanne, 2025).
+
+**Methodology:** HCS uses machine learning clustering on Steam data since 2006, enhanced with Mobygames credits data. The system classifies games based on two primary metrics:
+- Credits length (number of people credited, excluding QA and special thanks)
+- Disk size (game file size in MB/GB)
+
+**Categories:** HCS proposes four tiers: Kei (solo/tiny teams), Midi (small-medium studios), AA, and AAA.
+
+**Key Findings:** HCS analysis revealed that small-scale games ("Kei") now represent 75% of 2024 releases, a 16-fold increase since 2017. Despite this market flooding, these games maintain a stable ~25% revenue share. Median per-game revenue collapsed 97% between 2012-2018.
+
+**Limitations for Studio Classification:** While HCS provides valuable market analysis, it addresses a different problem than IGSC:
+
+| Dimension | HCS | IGSC |
+|-----------|-----|------|
+| **Classifies** | Games (products) | Studios (entities) |
+| **Timing** | Retrospective (post-release only) | Prospective (any development stage) |
+| **Primary metrics** | Credits + file size | Team size, funding, ownership, control |
+| **Funding visibility** | None | Source and general scale |
+| **Creative control** | Not considered | Core dimension |
+| **Self-classification** | No (data-derived) | Yes (voluntary) |
+
+HCS cannot classify a studio before release, cannot distinguish between a bootstrapped solo developer and one with $2M in venture funding, and introduces new terminology (Kei, Midi) that may face adoption resistance.
+
+**Complementary Approaches:** IGSC and HCS solve different problems and could coexist. IGSC classifies the studio's structural context; HCS classifies the output's production scope. A studio classified as Indie-Minor by IGSC might produce a Midi-scale game by HCS metrics, indicating they punched above their weight.
+
+### 9.5 Why Existing Approaches Fall Short
 
 Current approaches share common limitations:
 
@@ -391,11 +422,17 @@ The framework works across regions, accounting for cost variations. A 10-person 
 
 ## 11. Governance & Evolution
 
-### 11.1 Current Governance
+### 11.1 How Standards Gain Authority
+
+Standards are not granted authority; they earn it through adoption. The ESRB (Entertainment Software Rating Board) did not begin with legal authority. It was created by the industry to self-regulate, and became authoritative because retailers and platform holders *chose* to require it. Similarly, PEGI (Pan European Game Information) became the de facto European standard not through legislation, but through voluntary adoption by industry stakeholders who found it useful.
+
+IGSC follows this model. The framework becomes valuable when studios classify themselves, when awards bodies use IGSC tiers for categories, when grant programmes reference IGSC for eligibility, and when publishers filter by IGSC classification. Each adoption makes the next one easier, creating network effects that compound over time.
+
+### 11.2 Current Governance
 
 The IGSC is maintained by its creator as an open standard. The framework documentation is publicly available, and feedback is welcomed.
 
-### 11.2 Evolution Process
+### 11.3 Evolution Process
 
 The framework will evolve as the industry changes:
 
@@ -404,7 +441,7 @@ The framework will evolve as the industry changes:
 - **Version control** with clear changelogs
 - **Backward compatibility** considered for existing classifications
 
-### 11.3 Future Governance Options
+### 11.4 Future Governance Options
 
 As adoption grows, governance may evolve to include:
 
@@ -469,6 +506,9 @@ The IGSC is available for adoption by:
 
 ### Game Industry Classification Attempts
 
+- Mayerowitz, A. & Belzanne, J. (2025). "A Semi-Supervised Taxonomy of Game Production Scope." SSRN. Available at: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5429396
+- Mayerowitz, A. & Belzanne, J. (2025). "By the way, what's a AA?" HushCrasher. Available at: https://hushcrasher.substack.com/p/taxonomy-of-games
+- HushCrasher Classification System tool. Available at: https://hushcrasher.com/tools/classification/
 - [CITATION NEEDED: The Game Awards eligibility criteria for Best Independent Game]
 - [CITATION NEEDED: BAFTA Games Awards category definitions]
 - [CITATION NEEDED: Platform developer programme documentation (Steam, PlayStation, Xbox, Nintendo)]
