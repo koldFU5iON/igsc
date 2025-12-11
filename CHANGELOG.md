@@ -12,6 +12,86 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Self-classification rubric tool
 - Badge/certification assets
 - Case study examples
+- Real-world validation of project rating combination methodology
+- Meta-grades for studios/publishers (e.g., "AA-producing studio")
+
+---
+
+## [0.4.0] - 2025-12-11
+
+### Major Conceptual Shift: Projects Are Rated, Not Studios
+
+This release represents a fundamental evolution in the IGSC framework, transitioning from studio classification to project-based rating using bond-style nomenclature.
+
+### Added
+- **Bond-Style Rating Scale**: Full AAA/AA/A/BBB/BB/B/CCC/CC/C nomenclature with +/- modifiers
+  - Section 4.2: Explanation of bond rating origins in financial markets and applicability to games
+  - Preserves industry-familiar terminology (AAA/AA/A) while adding formal structure
+- **Source Rating Methodology** (Section 4.3):
+  - Studios, publishers, and funders are now rated as independent "sources"
+  - Sources combine to produce project ratings
+  - Same studio can have multiple projects with different ratings
+- **Studio Source Tier Definitions** (Section 6.1):
+  - AAA Studio: 200+ staff, multiple departments, proven AAA track record (e.g., Ubisoft Montreal, EA DICE)
+  - AA Studio: 80-200 staff, full departmental structure (e.g., Larian pre-BG3, IO Interactive)
+  - A Studio: 30-80 staff, emerging departments
+  - BBB Studio: 15-30 staff, first commercial title shipped
+  - BB Studio: 10-15 staff, mix of FT/contractors
+  - B Studio: 5-10 people, mostly part-time
+  - CCC/CC/C Studio: 1-4 people, hobbyist/part-time
+  - Each tier includes indicators, examples, and modifier guidance (+/-)
+- **Publisher/Funder Source Tier Definitions** (Section 6.2):
+  - AAA Publisher: $50M+ budgets, global reach (e.g., Sony, Microsoft, EA)
+  - AA Publisher: $5M-$30M budgets (e.g., Devolver, Annapurna, Private Division)
+  - A Publisher: $1M-$5M budgets (e.g., Raw Fury, Fellow Traveller)
+  - BBB/BB/B/C Publisher tiers with financial scale and support services
+- **Project Rating Combination Methodology** (Section 7.3):
+  - **Recommended Approach**: Weighted Floor-and-Ceiling Model
+  - Studio: 50-60% weight (capability foundation)
+  - Publisher: 30-40% weight (resources/reach)
+  - Other sources: 10-20% weight (supplementary)
+  - Transparent explanation of alternative approaches considered
+- **New Source Types** (Section 5.3):
+  - Platform holder support (ID@Xbox, PlayStation Partners, Epic MegaGrants)
+  - Regional/government grants (Film Victoria, Creative Europe, CMF, UK Games Fund)
+  - Community funding (Kickstarter, Patreon, Fig)
+  - Technology partners (Epic, Unity, middleware licensing deals)
+- **source-rating-criteria.md**: Standalone reference document for studio/publisher source ratings
+- New use case (Section 8.6): Platform Curation and Discovery
+
+### Changed
+- **Document subtitle**: "A Multi-Dimensional Taxonomy for Game Studios and Projects" → "A Bond-Style Rating System for Game Projects"
+- **Executive Summary**: Completely rewritten to reflect project-based rating approach
+- **Section 4 (The Framework)**: Restructured with four subsections explaining source-based methodology
+- **Section 5 (Classification Dimensions)**: Restructured to "Source Rating Dimensions" with studio/publisher/funder sources
+- **Section 6 (Tier Definitions)**: Massively expanded with comprehensive studio and publisher source tiers
+- **Section 7 (How Classification Works)**: Renamed to "How Project Rating Works", completely rewritten
+- **Section 8 (Use Cases)**: All examples updated to use project rating tiers (C/B, BB/BBB, A, AA/AAA)
+- **Section 9.4 (HCS Comparison)**: Updated comparison table to include "Bond-style ratings" dimension
+- **Section 10 (Design Principles)**: New principle 10.6 "Project-Centric, Not Studio-Centric"
+- **Section 12 (Call to Adoption)**: Completely rewritten with project-centric framing for all stakeholder groups
+- **Section 13 (References)**: Added new subsection "Financial Rating Systems" with citation flag for S&P/Moody's/Fitch
+- **Tier nomenclature throughout**: Micro/Small/Mid/Large replaced with AAA/AA/A/BBB/BB/B/C bond ratings
+
+### Fixed
+- Removed duplicate content (lines 557-1110 were duplicate of lines 1-557)
+
+### Design Philosophy
+- **Projects receive ratings based on combined sources**: A solo developer (C Studio) with AAA publisher backing produces an A-rated project
+- **Cultural alignment**: Bond rating scale (AAA/AA/A/BBB/BB/B/C) leverages existing industry vocabulary while adding formal structure
+- **Transparent methodology**: Combination formula presented as recommended approach with clear explanation of alternatives
+- **Multi-project flexibility**: Studios can have concurrent projects with different ratings based on resource allocation
+- **Financial markets precedent**: Bond ratings provide proven framework for evaluating risk/capacity through letter grades
+
+### Breaking Changes
+- Previous tier names (Micro/Small/Mid/Large) fully replaced with bond rating scale
+- Classification shifted from entity-centric (studios) to project-centric
+- Self-classification process now requires rating sources separately before combining
+
+### Notes
+- Combination methodology flagged as "subject to real-world validation"
+- Future versions may introduce meta-grades for studios/publishers (e.g., "AA-producing studio")
+- Version bumped to 0.4.0 to reflect significant conceptual evolution
 
 ---
 
