@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to the IGSC (International Game Studio Classification) will be documented in this file.
+All notable changes to the GPCS (Game Project Classification Standard) will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) for specification releases.
 
@@ -9,11 +9,216 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [Unreleased]
 
 ### Planned
-- Self-classification rubric tool
-- Badge/certification assets
-- Case study examples
-- Real-world validation of project rating combination methodology
-- Meta-grades for studios/publishers (e.g., "AA-producing studio")
+- Web-based rating calculator implementation
+- Badge/certification visual assets and specifications
+- Integration guides for platforms, awards bodies, grant programmes
+- Public registry implementation (database schema, API endpoints)
+- Case study collection from historical projects
+- Community feedback mechanism (GitHub discussions, Discord)
+
+---
+
+## [0.5.0] - 2025-12-15
+
+### Major Changes: Publication-Ready Revision
+
+This release represents a comprehensive revision based on expert stakeholder review, addressing critical gaps in specification completeness, governance, and adoption readiness. The framework has been renamed to emphasise project-centric rating.
+
+### Breaking Changes
+- **IGSC → GPCS Rename**: "International Game Studio Classification" → "Game Project Classification Standard"
+  - Reflects that projects are rated, not studios
+  - All acronym references updated throughout document
+  - White paper renamed to `GPCS-White-Paper.md`; previous IGSC version preserved as `IGSC-White-Paper-old.md` for backward compatibility with existing links
+
+### Added
+
+#### P0 - Critical for Credibility
+
+- **Section 7.8: Project Rating Form** (Implementation-Ready Specification):
+  - Complete 12-question self-rating form with bracketed ranges
+  - Studio questions: team size, infrastructure, track record, financial health, geographic footprint
+  - Publisher questions: financial scale, market reach, support services, platform relationships
+  - Other source questions: grants, platform support, co-development, community funding
+  - Rating tier score ranges table (AAA=90-100, AA=80-89, A=70-79, BBB=60-69, BB=50-59, B=40-49, C=0-39)
+  - Worked example: "Starlight Venture" project showing complete calculation methodology
+  - **Specification is now runnable** - implementers can build rating system directly from this
+
+- **Section 7.9: Verification Tiers**:
+  - **Unverified**: Self-reported, no evidence required, displayed with flag
+  - **Verified**: Public evidence required (LinkedIn profiles, press releases, company registry, credited titles)
+  - **Audited**: Third-party auditor reviews confidential materials (financials disclosed to auditor but NOT published)
+  - Comparison table showing evidence requirements, credibility levels, typical costs, consequences for false claims
+  - **Business model opportunity**: Audited tier creates market for audit services industry
+  - Addresses gaming/manipulation concerns through graduated verification
+
+- **Section 4.2: Bond Rating Methodology Citations**:
+  - Added S&P Global Ratings Definitions (2024), Guide to Credit Rating Essentials
+  - Added Moody's Rating Symbols & Definitions, Understanding Ratings
+  - Removed [CITATION NEEDED] placeholder
+  - Proper primary sources for financial credit rating methodology
+
+- **Section 7.3: Scoring Model Justification Tightened**:
+  - All numeric constants labeled "Version 0.4 defaults pending industry calibration"
+  - Justified weighting ratios (studio 50-60%, publisher 30-40%, other 10-20%)
+  - Justified floor constraint (max +2 tiers) and ceiling constraint (highest source -1 tier)
+  - Added exception handling for co-development and outsourcing-heavy productions
+  - Acknowledged these are hypotheses requiring validation through adoption data
+
+- **Case Study Added (Section 3.4)**: The Game Awards 2025 - Megabonk withdrawal
+  - Developer withdrew from "Best Debut Indie Game" after clarifying previous games shipped under other studio names
+  - First voluntary withdrawal in The Game Awards history
+  - Demonstrates need for verifiable structural criteria vs. relying on creator integrity
+  - GPCS solution: structural classification + "debut" eligibility flag prevents category mismatches
+
+#### P1 - Strong Improvements for Adoption
+
+- **Section 5.3.1: Co-Development as First-Class Source**:
+  - New subsection defining co-development partners as distinct source type
+  - Rating criteria: headcount bands, service scope (art-only to full production), track record, contract duration, infrastructure
+  - Examples: AAA co-dev (Virtuos, Keywords Studios) to B/C co-dev (freelance collectives)
+  - Two rating options: Additional source OR combined studio source
+  - Addresses outsourcing-heavy production models explicitly
+
+- **Section 5.5 & 6.4: Independence Marker (Second Output Code)**:
+  - **I0**: Fully independent (self-published, studio owns IP, no publisher control)
+  - **I1**: Partial independence (publisher-backed, retained creative control, studio owns or co-owns IP)
+  - **I2**: Publisher-controlled (publisher drives creative decisions, typically owns IP)
+  - **I3**: First-party/subsidiary (owned by platform holder or major publisher)
+  - **Dual output format**: Capacity/Independence (e.g., "A/I0" or "AAA/I3")
+  - **Addresses "indie discourse"** without conflating independence with production scale
+  - Independence marker is OPTIONAL - capacity rating stands alone if needed
+  - All examples throughout document updated to show dual code
+
+- **Section 5.2: Publisher Transparency (Named vs Shadow)**:
+  - **Named Publisher**: Publicly disclosed (press releases, website listings, store pages)
+  - **Shadow Publisher**: VC-backed or undisclosed financial backing (NDA, stealth publishing)
+  - **Self-Published**: No external publisher or major funder
+  - Does NOT rate publishers on "support intensity" (Light/Standard/Full) to avoid judgmental positioning
+  - Publisher capacity rating (AAA, AA, A) already indicates capability
+  - Support details shown on certificate/badge, not in shorthand code
+
+- **Section 5.1 & Rating Form Q1: Team Size Definition Clarified**:
+  - **Included**: Core FTE staff, long-term contractors (6+ months committed)
+  - **Excluded**: Short-term contractors (<6 months), co-dev partners (rated separately), shared central services (QA/loc)
+  - **Peak vs. Average**: Use average headcount during active development, not peak
+  - **Multi-project studios**: Count only dedicated headcount for the specific project being rated
+  - Explicit guidance added to each studio tier definition
+
+- **"What GPCS Is NOT" Warning Box** (after Executive Summary):
+  - Unavoidable box for skim readers with 5 bullets:
+    - NOT quality or artistic merit
+    - NOT commercial potential or guaranteed success
+    - NOT genre scope or development duration
+    - NOT cultural/aesthetic "indie" identity
+    - NOT a replacement for personal taste or critical judgment
+  - **Examples**: Stardew Valley (C-rated masterpiece), Anthem (AAA-rated commercial failure)
+  - Key message: GPCS provides context, not judgment
+
+- **Section 4.2: Bond-Rating Analogy De-Risked**:
+  - Renamed to "Capacity Rating Scale (Bond-Style Nomenclature)"
+  - Added comparison table: Bond Ratings (creditworthiness/default risk) vs. GPCS Capacity Ratings (production capacity/resource backing)
+  - Consistently refers to outputs as "capacity ratings" throughout document
+  - Explains WHY borrowing the scale (familiar nomenclature, avoids adoption friction, proven framework)
+  - Clear distinction: GPCS does NOT assess financial risk or investment quality
+
+- **Section 6.3: Examples Strengthened**:
+  - Added "why" bullets for each example explaining team size band, infrastructure level, track record
+  - Added disclaimer: "Examples are illustrative only, subject to change based on updated information, and time-bound to studio status at project development"
+  - Independence markers added to all examples (e.g., God of War AAA/I3, Hades A/I0, Stardew Valley C/I0)
+  - Expanded notes section with detailed example justifications
+
+- **Section 5.4: Outcome Metrics Operational Impact Explained**:
+  - **Rule 1**: Outcomes NEVER change original prospective project rating (rating is fixed at time of self-classification)
+  - **Rule 2**: Outcomes MAY influence future project ratings IF studio capacity evolved (e.g., studio hired, secured larger publisher)
+  - **Rule 3**: Outcomes used for research, benchmarking, lifecycle tracking, punch-above-weight identification
+  - **Rule 4**: "Re-rating at milestones" refers to during-development milestones (funding secured, publisher signed), NOT post-launch re-rating
+  - **Example**: Hollow Knight lifecycle (Team Cherry rated B/BB at development → R3-R4 outcome → Silksong likely BBB/A based on studio growth)
+
+#### P2 - Publication-Grade Quality
+
+- **Section 7.1: Mermaid Visual Diagram**:
+  - Comprehensive flowchart showing system flow:
+    1. Source Ratings (Studio + Publisher + Other) →
+    2. Weighted Combination →
+    3. Floor & Ceiling Constraints →
+    4. Project Rating Output (Capacity + Independence) →
+    5. Post-Launch Outcome Tracking
+  - Color-coded: Green (capacity rating), Blue (independence marker), Orange (full project code), Purple (outcome metrics)
+  - Legend explaining dashed arrows (optional processes)
+
+- **Section 11.3: Governance Mechanics**:
+  - **Proposal process**: Who can propose changes, what can be proposed, proposal requirements (RFC format)
+  - **Review cadence**: Quarterly review cycles for minor changes, annual major release cycle
+  - **Decision authority**: Current (single maintainer) → Future (9-member advisory board with stakeholder representation)
+  - **Voting thresholds**: Simple majority (minor tweaks), supermajority 2/3 (major changes), near-unanimous 8/9 (breaking changes)
+  - **Backward compatibility rules**: Grandfathered ratings vs. universal re-rating with transition periods
+  - **Version control**: Patch/Minor/Major semantic versioning, public changelog, diff tools for tier comparison
+  - **Example changelog entry**: Hypothetical v0.5 showing how methodology changes would be documented
+
+- **Section 10.7: Global Applicability Guardrails**:
+  - **Core principle**: GPCS measures capacity (infrastructure, headcount, track record), NOT burn-rate equivalence
+  - **Example**: 30-person studio in Poland vs. California both rated similarly despite 3x budget difference
+  - **Four justifications** for no cost-of-living adjustment:
+    1. Capacity-focused (what can be built, not what it costs)
+    2. Simplicity (regional indexing adds enormous complexity)
+    3. Quality focus (expensive ≠ better, cheap ≠ worse)
+    4. Lifecycle consistency (studios relocate, costs change)
+  - **Limitation acknowledged**: Explicitly states this WILL face criticism, explains why GPCS does not normalize for purchasing power parity
+  - **Future consideration**: Could be revisited if broad stakeholder consensus emerges for regional cost indexing
+
+### Changed
+
+- **Title and branding**: All references updated from "International Game Studio Classification (IGSC)" to "Game Project Classification Standard (GPCS)"
+- **Terminology**: "Capacity rating" used consistently instead of ambiguous "project rating" or "classification"
+- **Style and consistency**:
+  - Fixed "1990's" → "1990s" throughout
+  - British English used consistently (standardised, recognised, organised, etc.)
+  - Professional academic tone maintained, informal phrasing removed
+  - All section cross-references validated
+- **Examples format**: All project rating examples now include capacity/independence dual code (e.g., "A/I0", "AAA/I3")
+- **Rating form integrated**: Section 7 restructured to include complete self-rating specification (7.8) and verification tiers (7.9)
+
+### Fixed
+
+- Removed ambiguity in "team size" definition across all studio tier descriptions
+- Clarified publisher role (capacity backing vs. support intensity judgment)
+- Addressed bond rating analogy prestige confusion with explicit comparison table
+- Strengthened outcome metrics operational rules to prevent rating manipulation
+- Added missing governance decision mechanics (previously intent-only)
+
+### Design Philosophy Updates
+
+- **Dual-code output**: Capacity/Independence format (e.g., "A/I0") addresses both production scale AND ownership/creative control
+- **Verification tiers**: Graduated trust model from self-reported to third-party audited enables appropriate verification for use case (awards may require Verified+, grants may require Audited)
+- **Implementation-ready**: Rating form specification enables immediate platform/tool development
+- **Business model**: Audited verification tier creates sustainable revenue model for third-party audit services
+- **Global applicability**: Explicitly scopes out regional cost adjustments, focuses on capacity measurement
+
+### Credibility Improvements (December 15, 2025)
+
+Following expert stakeholder review, critical credibility fixes were applied to transform the document from "strong proposal" to "credible standard" ready for adoption:
+
+**Priority 1 Fixes:**
+- **Scale Consistency Resolved**: Removed CCC/CC/C sub-tiers from public scale. Public-facing scale is now clean AAA/AA/A/BBB/BB/B/C (7 tiers). CCC/CC removed from all public outputs; C tier now covers solo to micro-team projects (1-4 people) with rationale explaining simplified lower tiers.
+- **Calibration Plan Added (Section 7.10)**: Comprehensive validation methodology with 100-project test dataset, 15-20 person expert panel, agreement targets (>80% within ±1 tier), governance rules for weight adjustments (±10% per release), transition periods, transparency commitments, and Q1-Q4 2026 timeline. Explicitly framed as "test bed subject to stakeholder scrutiny."
+- **Consistency Pass**: Added punchy clarification "Studios do not have a single GPCS rating; projects do" in Section 4.1. Updated all "classify studios" phrasing to "rate projects; evaluate studios as sources" throughout document.
+- **"Shadow Publisher" Renamed**: Changed to "Confidential Publisher" (neutral, professional terminology). Updated triad to "Named / Confidential / Self-Published." Reframed as standard business practice, not evasion.
+- **Implementation Brief Added**: New 1-page decision-maker summary after Executive Summary covering What GPCS Is, What It Outputs (with example), What Data Is Required, How Verification Works, Three Adoption Asks (Awards, Grants, Platforms), and Why This Works. Provides elevator pitch for platform operators, awards bodies, grant programmes, publishers.
+
+**Priority 2 Fixes:**
+- **Visual Badge Example Added (Section 7.9)**: ASCII art badge mockup plus full certificate breakdown showing realistic project data (Starlight Venture example with source ratings, verification details, QR code reference).
+- **I1/I2 Boundary Rules Clarified (Section 6.4)**: IP ownership is primary differentiator. I1 = Studio retains IP (or co-owns), I2 = Publisher owns IP. Explicit boundary rules added with examples. New Q12 in rating form for IP ownership.
+- **Other Sources Weight Cap Defined (Section 7.3)**: 20% maximum weight unless representing production capacity >30% of studio headcount. Exception for co-development partners (can go up to 30% or be combined with studio source). Rationale: grants elevate financially, co-dev provides production capacity.
+- **Mermaid Diagram Fallback Added (Section 7.1)**: Plain-English 6-step flow description for environments that don't render Mermaid diagrams (source ratings → weighting → constraints → output → independence → outcomes).
+- **References Standardized (Section 13)**: Applied consistent citation format across all subsections (Author/Organization. (Year). "Title." *Publication/Source*. Available at: [URL]). Fixed bare URLs, missing publication info, unclear dates.
+
+### Notes
+
+- Version bumped to 0.5.0 to reflect publication-ready status and significant additions
+- Document is now suitable for stakeholder review (platforms, awards bodies, grant programmes)
+- Implementation guides, marketing materials, and technical tools remain planned for future releases
+- Community feedback mechanisms (GitHub discussions, Discord) to be established post-publication
+- Next major milestone: v1.0 (formal standard release following initial adoption and calibration)
 
 ---
 
