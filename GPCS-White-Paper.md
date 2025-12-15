@@ -79,11 +79,11 @@ Awards bodies can require Verified+; grants can require Audited. Appropriate ver
 
 ### Three Adoption Asks
 
-**1. Awards Bodies:** Use GPCS capacity tiers for fair competition categories
-- "Best C/B Project" (solo/small teams)
-- "Best BB/BBB Project" (emerging studios)
-- "Best A Project" (mid-tier productions)
-- "Best AA/AAA Project" (large-scale productions)
+**1. Awards Bodies:** Use GPCS capacity tiers for fair competition categories while keeping public-facing names intuitive, with the tier criteria shown as a subtitle or judging note:
+- **Best Solo Project** — Eligible projects classified as C/B under GPCS (solo creators and very small teams)
+- **Best Emerging Studio** — Projects classified as BB/BBB under GPCS (growing studios with expanding support)
+- **Best Mid-Tier Production** — Projects classified as A under GPCS (fully staffed mid-size productions)
+- **Best Flagship Production** — Projects classified as AA/AAA under GPCS (large-scale productions with enterprise backing)
 
 **2. Grant Programmes:** Use GPCS source ratings for eligibility criteria
 - "Eligible: C/B/BB-rated studios only" (emerging creators)
@@ -575,6 +575,8 @@ The whitepaper references "re-rating at milestones." This means:
 - Project is **NOT re-rated to AA or AAA** based on outcome alone
 
 **Rationale:** Re-rating during development reflects real changes in resources and backing. Post-launch outcomes reflect market performance, not production capacity.
+
+**Live service / long-running projects:** Evergreen titles (e.g., Minecraft, PUBG, Escape from Tarkov) that continue active development for years can treat major structural events—studio acquisition, massive team expansion, or a shift to platform-holder ownership—as new milestones. When the ongoing development enters a materially different capacity tier (e.g., solo creator acquired by Microsoft and supported by a 200+ person team), the project may receive a **new** rating reflecting the updated sources, while the original pre-acquisition rating remains in the historical record.
 
 #### Example Lifecycle Tracking
 
@@ -1624,6 +1626,21 @@ GPC ratings can be verified at three distinct levels, each providing a different
 - Project banned from future participation
 - Legal remedies available to stakeholders who relied on audited rating
 
+#### Tiered Verification Recommendation (for stakeholder feedback)
+
+To discourage "rating inflation" and showcase good-faith adoption patterns, stakeholders have proposed tying minimum verification levels to the resulting capacity rating:
+
+- **AA/AAA projects:** Require an audited verification before badges are displayed. Audits may carry a fee paid to the auditor, ensuring only materially backed projects claim top-tier capacity.
+- **BB/BBB/A projects:** Require at least the Verified tier with an optional audit upgrade (recommended for headline showcases, large grants, or when undisclosed backing is suspected).
+- **B and below:** May rely on self-reported data, with verification offered but not required so small teams are not overburdened.
+
+**Live-service renewal:** Projects operating as SaaS/evergreen services (ongoing monetisation, continuous content drops) should reaffirm their verification status on a **12-month cadence**:
+- **AA/AAA live-service projects**: Annual audited renewal, paid directly to the auditor, to demonstrate the current sources still match the rating.
+- **BB/BBB/A live-service projects**: Annual Verified renewal with optional audit upgrade where required by awards, grants, or platforms.
+- **B and below live-service projects**: Renewal optional but encouraged (self-report refresh is sufficient unless stakeholder requires more).
+
+These practices are not core requirements yet; they serve as implementation guidance for registries, awards bodies, and grant makers looking to prevent stale badges and detect structural shifts early. Feedback on the cadence, fee expectations, and enforcement model is welcome from stakeholders.
+
 #### Comparison Table
 
 | Aspect | Unverified | Verified | Audited |
@@ -2012,6 +2029,13 @@ The framework will evolve as the industry changes. This section outlines the con
 - Backwards compatibility assessment
 - Version number increment (e.g., 0.5 → 1.0 or 1.0 → 1.1)
 - Public changelog published
+
+#### Registry & Validation Operations
+
+- **Live-service renewal policy** (pilot): Projects flagged as SaaS/evergreen services must confirm their verification level every 12 months. The renewal re-states the active sources; if materially unchanged, the rating carries forward with a fresh timestamp.
+- **Fee alignment**: Renewal costs mirror the verification level—self-report free, Verified covers administrative review, Audited fees paid directly to the auditor. Registries should publish schedules so studios know what to expect per tier.
+- **Non-response handling**: Projects that skip renewal grace periods have their badges hidden until they re-verify, preventing stale public listings.
+- **Feedback loop**: This operational model is in public consultation; adopters are asked to report costs, workload, and abuse cases so the governance body can refine requirements before they become mandatory.
 
 #### Decision Authority (Current: Single Maintainer)
 

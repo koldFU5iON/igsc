@@ -220,6 +220,14 @@ Following expert stakeholder review, critical credibility fixes were applied to 
 - Community feedback mechanisms (GitHub discussions, Discord) to be established post-publication
 - Next major milestone: v1.0 (formal standard release following initial adoption and calibration)
 
+### Added (Post-0.5.0 Notes)
+
+- **Verification Guidance Updates**:
+  - Tiered verification renewal cadence for live-service/SaaS projects (annual self-report/verified/audited refresh depending on tier).
+  - Registry operations note aligning renewal fees to verification levels and clarifying badge removal when projects lapse.
+- **Re-rating Clarification**:
+  - Additional guidance for long-running titles that change ownership or team scale (e.g., Minecraft, PUBG) showing how new ratings are logged while preserving the original entry.
+
 ---
 
 ## [0.4.0] - 2025-12-11
