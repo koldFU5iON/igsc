@@ -71,9 +71,11 @@ A voluntary, transparent rating system that classifies **game projects** (not st
 ### How Verification Works
 
 **Three tiers:**
-- **Unverified:** Self-reported, no evidence (displayed with flag)
-- **Verified:** Public evidence validated (LinkedIn, press releases, company registry, credited titles)
-- **Audited:** Third-party auditor reviews confidential materials (financials disclosed to auditor, NOT published)
+- **Unverified:** Self-reported, no evidence (displayed with flag). No Evidence Strength shown.
+- **Verified:** Public evidence validated (LinkedIn, press releases, company registry, credited titles). Includes Evidence Strength indicator (Strong ●●● / Moderate ●●○ / Limited ●○○) showing quality and recency of evidence.
+- **Audited:** Third-party auditor reviews confidential materials (financials disclosed to auditor, NOT published). Evidence Strength implicitly Strong.
+
+**Evidence Disclosure:** If evidence cannot be provided for specific claims, those fields are marked "Undisclosed" or "Withheld" on the certificate. Projects cannot claim Verified status whilst withholding key evidence. Partial verification is transparent.
 
 Awards bodies can require Verified+; grants can require Audited. Appropriate verification level depends on use case stakes.
 
@@ -359,7 +361,7 @@ To support searchability, registry lookups, and durable references across databa
 - Systems MUST support prefix lookup with progressive disambiguation (if multiple projects match the prefix, require additional characters until unique).
 
 **Example badge line:**
-- `GPC A/I1 • Verified • v0.5 • ID: 01JH8M3KQ4`
+- `GPC A/I1 • Verified ●●○ • Release • v0.5 • ID: 01JH8M3KQ4`
 
 
 ## 5. Source Rating Dimensions
@@ -438,7 +440,25 @@ The Named/Confidential distinction is **descriptive, not evaluative**. It does n
 
 **Important:** Confidential Publishers operate under non-disclosure agreements or choose not to publicly announce their involvement during development. This is a standard business practice and does not imply deception, but projects should acknowledge backing exists even if the specific entity cannot be disclosed.
 
-**Important:** GPCS does NOT rate publishers on "support intensity" (e.g., Light/Standard/Full support). The publisher's capacity rating (AAA, AA, A, etc.) already indicates their capability. Specific support details (QA provided, localisation scope, marketing budget, etc.) are disclosed on the project certificate/badge but not encoded in the shorthand rating code.
+**Publisher Entity Tier vs. Deal Contribution Tier**
+
+GPCS distinguishes between:
+- **Publisher Entity Tier:** The publisher's general capacity (what Ubisoft, Microsoft, Tencent, etc. are capable of in aggregate)
+- **Publisher Deal Contribution Tier:** The support that specific publisher is committing to this specific project (development funding, services provided, scope of those services)
+
+For project rating purposes, the **Deal Contribution Tier** is used. A AAA publisher providing limited support (small budget, minimal services) contributes at a lower tier than their entity rating. This prevents logo-only deals from artificially inflating project ratings.
+
+The questionnaire captures contribution detail through:
+- **Q7 (Development Funding Commitment):** Does the publisher fully fund, co-fund, or simply provide services/marketing?
+- **Q8 (Financial Scale Band):** What bracket best describes the budget committed to this project?
+- **Q10 (Support Services + Scope):** Which services (marketing, QA, localisation, live ops, etc.) are provided, and are they basic, standard, or extensive in scope?
+
+These inputs are combined into a **support intensity classification** (Light Touch / Standard / Full). Section 7.3 documents exactly how each classification affects the ceiling constraint. Summary:
+- **Light Touch:** No development funding + ≤1 basic service → no ceiling applied (studio floor only)
+- **Standard Support:** Partial funding or 2-3 core services → ceiling applied at contribution tier minus two
+- **Full Support:** Full funding + ≥4 services with at least one extensive scope → ceiling applied at contribution tier minus one
+
+Deal contribution is treated as a continuous variable; adding services/funding during development triggers re-rating to reflect the new contribution tier.
 
 **Certificate/Badge Detail:** Full project certificates show:
 - Studio rating (e.g., A)
@@ -1173,6 +1193,28 @@ Once sources are independently rated, they are combined to produce a project rat
 
 The second approach more accurately reflects the project's actual production capacity.
 
+#### Support Intensity Classification (Q7 + Q10)
+
+Publisher/funder contribution is determined by blending **development funding commitment (Q7)** with the **service bundle and scope (Q10)**. These are facts studios actually know (and can share without breaking NDAs).
+
+| Support Intensity | Funding Signal (Q7) | Service Signal (Q10) | Resulting Contribution Behaviour |
+|-------------------|---------------------|----------------------|----------------------------------|
+| **Light Touch** | No development funding (services/marketing only) | ≤1 service, all marked Basic scope | Treated as support-only. Contribution tier reflects limited services and **no ceiling** is applied. |
+| **Standard Support** | Partial funding or milestone-based co-funding | 2–3 core services at least Standard scope (e.g., marketing + QA + localisation) | Contribution tier elevated. **Ceiling enforced at Contribution Tier − 2 tiers.** |
+| **Full Support** | Full development funding committed | ≥4 services with at least one service marked Extensive scope (embedded QA, AAA-scale marketing, live ops, etc.) | Contribution tier reflects full publisher weight. **Ceiling enforced at Contribution Tier − 1 tier.** |
+
+**Service scope capture:** For each service ticked in Q10, projects indicate whether the publisher provides Basic (advisory/minimal), Standard (typical support), or Extensive (embedded/enterprise-level) delivery. This produces enough structure to classify support intensity without requesting exact dollar figures.
+
+**Decision logic:**
+1. Determine contribution tier score from Q7–Q11 inputs (funding commitment, financial scale band, market reach, service bundle, portfolio scale).
+2. Classify support intensity using the table above.
+3. Apply ceiling behaviour:
+   - **Light Touch:** No ceiling. Weighted score stands, constrained only by the studio floor.
+   - **Standard Support:** Ceiling ensures project rating cannot fall more than two tiers below the contribution tier (AA contribution → ≥BBB).
+   - **Full Support:** Ceiling ensures project rating cannot fall more than one tier below the contribution tier (AAA contribution → ≥AA-).
+
+Projects re-submit the questionnaire whenever funding/services change so the contribution tier and support intensity stay accurate throughout development.
+
 **Calculation:**
 1. Convert each source rating to a numerical score (AAA=95, AA=85, A=75, BBB=65, BB=55, B=45, C=30)
 2. Apply weights to each source score
@@ -1187,7 +1229,18 @@ The second approach more accurately reflects the project's actual production cap
 
 **Floor constraint:** Project rating cannot exceed studio rating by more than 2 full tiers, even with exceptional external support. A C-rated studio cannot produce a AAA-rated project; infrastructure constraints are real.
 
-**Ceiling constraint:** Project rating cannot be lower than the highest source rating minus 1 tier. If an AAA publisher backs a project, the result cannot fall below AA-, even if the studio is smaller.
+**Ceiling constraint (support-weighted):** The project rating cannot fall below the highest **Committed Contribution Tier** adjusted by the support-intensity rules above. The contribution tier reflects the support actually committed to this project (funding + services + scope), not the publisher's theoretical maximum capacity. If contribution increases materially (new funding, expanded co-development, major additional services), the project may be re-rated at that milestone.
+
+| Support Intensity | Example Deal Pattern | Ceiling Behaviour |
+|-------------------|----------------------|-------------------|
+| **Light Touch** | Marketing/distribution only, advisory services, no dev funding | No ceiling (project relies on weighted score + studio floor) |
+| **Standard Support** | Partial funding plus QA + marketing, or 2–3 services at Standard scope | Ceiling at **Contribution Tier − 2 tiers** (AA contribution → ≥BBB) |
+| **Full Support** | Full funding + ≥4 services with at least one Extensive delivery (embedded QA, full live ops, AAA marketing) | Ceiling at **Contribution Tier − 1 tier** (AAA contribution → ≥AA-) |
+
+**Worked scenario (8-person BB studio + AAA publisher):**
+- **Light Touch:** Marketing-only deal (no funding). Weighted score ≈ BBB. No ceiling applied → rating stays BBB.
+- **Standard Support:** $1M co-funding + QA + marketing. Contribution tier AA+. Weighted score BBB, but ceiling enforces BBB+ minimum.
+- **Full Support:** $5M full funding + QA + localisation + marketing + community + live ops (Extensive). Contribution tier AAA. Weighted score BBB, but ceiling raises result to AA- minimum.
 
 #### Justification for Numerical Constants
 
@@ -1367,10 +1420,15 @@ Select the best description:
 #### Publisher/Funder Information
 
 **Q6. Is this project publisher-backed or externally funded?**
-- [ ] Yes (proceed to Q7–Q11)
-- [ ] No (skip to Q12)
+- [ ] Yes (proceed to Q7–Q12)
+- [ ] No (skip to Q13)
 
-**Q7. Publisher/Funder Financial Scale**
+**Q7. Development Funding Commitment**
+- [ ] Publisher fully funds development (100% budget provided)
+- [ ] Partial/milestone-based co-funding (publisher provides some development budget)
+- [ ] No development funding (services/marketing only)
+
+**Q8. Publisher/Funder Financial Scale**
 Select the typical budget range they support for projects like this:
 - [ ] <$10K or non-financial support only (C-tier indicator)
 - [ ] <$50K (B-tier indicator)
@@ -1380,7 +1438,7 @@ Select the typical budget range they support for projects like this:
 - [ ] $5M–$30M (AA-tier indicator)
 - [ ] $50M+ (AAA-tier indicator)
 
-**Q8. Publisher/Funder Market Reach**
+**Q9. Publisher/Funder Market Reach**
 Select the best description:
 - [ ] None or minimal (C-tier indicator)
 - [ ] None or minimal (B-tier indicator)
@@ -1390,20 +1448,19 @@ Select the best description:
 - [ ] Strong digital distribution, selective retail presence, moderate marketing budgets (AA-tier indicator)
 - [ ] Global distribution, retail + digital, major marketing campaigns (AAA-tier indicator)
 
-**Q9. Publisher/Funder Support Services**
-Select all that apply:
-- [ ] None or minimal
+**Q10. Publisher/Funder Support Services & Scope**
+Select all services provided *and* indicate scope for each (Basic / Standard / Extensive):
 - [ ] Advisory only
-- [ ] Advisory and connections
 - [ ] Basic production support
 - [ ] QA partnerships
 - [ ] Localisation support
-- [ ] Marketing support
+- [ ] Marketing / PR support
 - [ ] Community management
 - [ ] Live operations infrastructure
-- [ ] Full production support (QA, localisation, community, live ops)
+- [ ] Full production support (embedded teams, co-dev units)
+- [ ] Other specialised services (specify): __________
 
-**Q10. Publisher/Funder Portfolio Scale**
+**Q11. Publisher/Funder Portfolio Scale**
 Select the bracket:
 - [ ] Single project or advisory role (C/B-tier indicator)
 - [ ] 1–2 projects (BB-tier indicator)
@@ -1412,12 +1469,12 @@ Select the bracket:
 - [ ] 3–10 concurrent projects (AA-tier indicator)
 - [ ] Multiple concurrent AAA projects (AAA-tier indicator)
 
-**Q11. Publisher Disclosure Status**
+**Q12. Publisher Disclosure Status**
 - [ ] Named Publisher (publicly disclosed)
 - [ ] Confidential Publisher (VC-backed or undisclosed financial backing under NDA)
 - [ ] Self-Published (no publisher involved)
 
-**Q12. IP Ownership (for Independence Marker determination)**
+**Q13. IP Ownership (for Independence Marker determination)**
 Select the applicable option:
 - [ ] Studio fully owns IP
 - [ ] Studio and publisher co-own IP
@@ -1428,7 +1485,7 @@ Select the applicable option:
 
 #### Other Sources
 
-**Q13. Additional Support Sources**
+**Q14. Additional Support Sources**
 Select all that apply and provide amounts/details:
 
 Platform Holder Support:
@@ -1467,15 +1524,16 @@ Technology Partners:
 
 **Publisher Information:**
 - Q6: Yes
-- Q7: $5M–$30M → AA-tier indicator (85 points)
-- Q8: Strong digital, selective retail → AA-tier indicator
-- Q9: QA, localisation, marketing → AA-tier indicator
-- Q10: 3–10 concurrent projects → AA-tier indicator
-- Q11: Named Publisher
+- Q7: Full development funding committed
+- Q8: $5M–$30M → AA-tier indicator (85 points)
+- Q9: Strong digital, selective retail → AA-tier indicator
+- Q10: QA, localisation, marketing (Standard scope) → AA-tier indicator
+- Q11: 3–10 concurrent projects → AA-tier indicator
+- Q12: Named Publisher
 **Publisher Rating: AA (85 points)**
 
 **Other Sources:**
-- Q12: Epic MegaGrant ($250K) → BBB-tier indicator (65 points)
+- Q14: Epic MegaGrant ($250K) → BBB-tier indicator (65 points)
 
 **Calculation:**
 Using weighted floor-and-ceiling methodology (Section 7.3):
@@ -1576,10 +1634,27 @@ GPC ratings can be verified at three distinct levels, each providing a different
 - Projects applying for grants or awards that require verification
 - Studios building public credibility with partners and press
 
+**Evidence Strength (Verified ratings only):**
+
+Verified ratings include an Evidence Strength indicator (Strong / Moderate / Limited) that reflects the quality and recency of public evidence reviewed. This does not change the rating outcome; it communicates confidence in the verification basis.
+
+- **Strong (●●●):** Multiple independent sources with recent confirmation (e.g., store credits + company site + registry filings + recent press coverage)
+- **Moderate (●●○):** Credible but indirect or partial evidence (e.g., press releases + LinkedIn sampling without complete team verification)
+- **Limited (●○○):** Minimal or stale public evidence; verification is best-effort based on available information
+
 **Limitations:**
 - Still relies primarily on self-reporting within bracketed ranges
 - Cannot verify confidential financial details
 - Limited ability to detect sophisticated misrepresentation
+
+**Evidence Disclosure Policy:**
+
+If a studio or publisher chooses not to provide evidence for specific claims, those claims have two options:
+
+1. **Remain Unverified** — The overall rating tier remains Unverified for those specific components
+2. **Marked as Withheld/Undisclosed** — The certificate displays "Undisclosed" or "Withheld" for fields where evidence was not provided (e.g., "Team Size: Undisclosed" or "Funding Source: Withheld")
+
+This approach prevents "confidentiality as a credibility weapon" — projects cannot claim Verified status while withholding key evidence. Partial verification is transparent: publicly evidenced claims are marked Verified; undisclosed claims are marked accordingly.
 
 **What happens when claims are false:**
 - Registry removal and rating revocation
@@ -1646,6 +1721,7 @@ These practices are not core requirements yet; they serve as implementation guid
 | Aspect | Unverified | Verified | Audited |
 |--------|-----------|----------|---------|
 | **Evidence required** | None | Public/semi-public only | Confidential materials reviewed |
+| **Evidence Strength displayed** | No (self-report) | Yes (●●●/●●○/●○○) | Implicitly Strong (or shown as "Strong (Audited)") |
 | **Who reviews** | No one | GPCS registry (spot-checking) | Independent third-party auditor |
 | **Financials disclosed** | No | No | Yes, to auditor only (not public) |
 | **Credibility level** | Low | Moderate | High |
@@ -1674,7 +1750,7 @@ The GPCS framework defines WHAT verification tiers are and WHY they matter. Oper
 │   GPCS CAPACITY RATING          │
 │                                 │
 │         A / I1                  │
-│       Verified                  │
+│   Verified ●●○ • Release        │
 │        v0.5                     │
 │                                 │
 │   [QR Code: Verify at           │
@@ -1695,7 +1771,9 @@ The GPCS framework defines WHAT verification tiers are and WHY they matter. Oper
 - **Other Sources:** ID@Xbox Platform Grant (BBB)
 - **Project Capacity Rating:** A (Combined Score: 77.5)
 - **Independence:** I1 (Studio retains IP, publisher has distribution rights)
-- **Verification:** Verified (LinkedIn profiles confirmed, press releases validated, company registry checked)
+- **Verification:** Verified (Evidence Strength: Moderate)
+  - LinkedIn profiles confirmed, press releases validated, company registry checked
+- **Stage:** Release
 - **Rated:** 2025-10-15
 - **Version:** v0.5
 - **GPC-ID:** 01JH8M3KQ4W7Z2T5M1N9 (short: 01JH8M3KQ4)
@@ -1921,6 +1999,20 @@ Ratings are descriptive, not hierarchical. A C-rated project is not inferior to 
 ### 10.5 Lifecycle Awareness
 
 Ratings are not permanent. Projects can be re-rated at major milestones (funding rounds, publisher signings, release). Historical ratings are preserved to track evolution and growth over time.
+
+#### Multiple Ratings and Canonical Release Rating
+
+Projects may receive multiple ratings throughout their development lifecycle (Concept, Production, Release, Live). The following rules govern which rating is canonical:
+
+1. **Ratings are snapshots:** Each rating has a timestamp, version indicator, and development stage. All ratings are preserved in the registry.
+
+2. **Release Rating is canonical:** The rating generated at or closest to the public release date serves as the canonical rating for public reference, award eligibility, and category placement. This reflects the project's actual production circumstances at launch.
+
+3. **Post-release ratings:** Projects may receive updated ratings post-release (e.g., after major expansions, funding rounds, or structural changes). These exist as "Current Rating" but do not overwrite the Release Rating. Both are displayed in the registry with clear stage labels.
+
+**Badge display:** Ratings include a Stage indicator (Concept / Production / Release / Live) to clarify which development phase the rating represents. Example: `A/I1 • Verified ●●○ • Release • v0.5 • ID: 01JH8M3KQ4`
+
+**Practical implication:** A project rated BBB during production that secures additional funding and is re-rated A at release will use the A (Release) rating for public purposes. The BBB (Production) rating remains in the historical record.
 
 ### 10.6 Project-Centric, Not Studio-Centric
 
