@@ -1,6 +1,6 @@
-# Contributing to IGSC
+# Contributing to GPCS
 
-Thank you for your interest in the International Game Studio Classification (IGSC).
+Thank you for your interest in the Game Project Classification Standard (GPCS).
 
 ## How to Contribute
 
@@ -45,7 +45,7 @@ For direct contributions to the specification:
 
 ## Adoption Enquiries
 
-If you're interested in adopting IGSC for your organisation (awards, platform, publisher, etc.), please open an issue tagged `[Adoption]` or contact the author directly.
+If you're interested in adopting GPCS for your organisation (awards, platforms, publishers, etc.), please open an issue tagged `[Adoption]` or contact the author directly.
 
 ## License
 

@@ -540,6 +540,10 @@ When a project involves significant co-development:
 
 Outcome metrics reflect performance after a project launches. These are optional and enable reclassification over time, creating a lifecycle view rather than a static rating.
 
+**Important: Ratings Are Descriptive, Not Predictive**
+
+GPC ratings describe the production capacity and resource context available **during development**. They do not predict or guarantee commercial success, critical reception, or player traction. A C-rated project can outsell an AAA-rated project; a B-rated game can win more awards than an A-rated title. Outcome tracking exists to highlight projects that "punch above their weight" and to study correlations, not to retroactively adjust capacity ratings. Higher revenue or acclaim does **not** mean the project should have been rated higher— it simply means the team delivered exceptional results within its resource band.
+
 | Variable | Description | Example Bands |
 |----------|-------------|---------------|
 | **Revenue** | Commercial performance | R0: <$100K / R1: $100K–$1M / R2: $1M–$10M / R3: $10M–$50M / R4: $50M+ |
@@ -623,6 +627,14 @@ The independence marker provides a secondary classification dimension that addre
 - Who owns the intellectual property and publishing rights?
 - What financial dependencies exist (publisher advances, platform exclusivity deals)?
 
+**Control rights dimension:** Independence accounts for both **IP ownership** and **decision-making authority**. Control rights include:
+- Creative direction (core design pillars, scope, monetisation)
+- Release timing and platform decisions
+- Budget allocation / milestone approval authority
+- Ability to ship without external veto
+
+Projects indicate control rights in the questionnaire (see Q14). Independence tiers are assigned only when both IP and control signals align with the tier definition. If a publisher retains veto rights over creative fundamentals, the project cannot be classified as I1 even if IP technically remains with the studio.
+
 **Independence tiers (I0–I3):**
 
 #### I0: Fully Independent
@@ -633,15 +645,15 @@ The independence marker provides a secondary classification dimension that addre
 - **Examples**: Supergiant Games (Hades), ConcernedApe (Stardew Valley), ZA/UM (Disco Elysium - at time of development)
 
 #### I1: Partial Independence (Publisher-Backed, Retained Creative Control)
-- **Creative control**: Majority internal, publisher has limited approval rights (milestone approvals, platform compliance)
+- **Creative control**: Studio holds decision authority over design pillars, scope, monetisation, and release timing; publisher input limited to compliance or advisory feedback
 - **IP ownership**: Studio retains IP ownership OR has negotiated IP reversion clause
 - **Financial structure**: Publisher provides funding/advances, but creative direction remains with studio
 - **Publishing**: Publisher handles distribution, marketing, platform relationships
 - **Examples**: Supergiant Games (published by Private Division for Hades on some platforms), many Devolver Digital / Annapurna Interactive deals where studio retains IP
 
 #### I2: Publisher-Controlled (Publisher-Driven Creative Direction)
-- **Creative control**: Publisher has significant creative input (approval over design direction, scope, monetization)
-- **IP ownership**: Publisher owns IP OR studio is work-for-hire
+- **Creative control**: Publisher holds veto/approval rights over core pillars, scope, monetisation, or release timing (even if studio retains IP)
+- **IP ownership**: Publisher owns IP OR contract grants publisher effective control despite studio ownership
 - **Financial structure**: Publisher funds development, recoups investment before studio profit share
 - **Publishing**: Publisher controls all go-to-market decisions
 - **Examples**: Many traditional publisher-developer relationships, external studios contracted to work on publisher-owned IP
@@ -664,9 +676,13 @@ The independence marker provides a secondary classification dimension that addre
 Projects self-report independence status based on:
 - Ownership structure (who owns the studio? who owns the IP?)
 - Funding source and terms (advances, revenue share, creative approval rights)
-- Creative control structure (who has final say on design, scope, monetization?)
+- Creative control structure (who has final say on design, scope, monetization, release timing?)
 
 Verification tiers (Unverified/Verified/Audited) apply to independence claims just as they do to capacity ratings. For Audited verification, contracts and ownership documents are reviewed by third-party auditor to confirm independence classification.
+
+**Examples:**
+- *IP retained, control lost*: Studio keeps IP but publisher can veto any creative pillar and milestone; classified as **I2** (publisher-controlled) because control rights override IP retention.
+- *IP licensed, control retained*: Studio develops a licensed IP game but has contractual authority over creative execution; may still qualify as **I1** if the studio drives decisions despite license ownership.
 
 ---
 
@@ -1483,9 +1499,21 @@ Select the applicable option:
 
 *Mapping: Studio owns or co-owns → contributes to I0/I1; Publisher owns → contributes to I2/I3*
 
+**Q14. Creative & Control Rights**
+Who has final approval over the following dimensions? (Select one per row)
+
+| Decision Area | Studio | Publisher/Funder | Shared | Not Applicable / Other |
+|---------------|--------|------------------|--------|------------------------|
+| Core creative pillars (design, narrative, visual direction) | [ ] | [ ] | [ ] | [ ] |
+| Scope/budget changes & milestone sign-off | [ ] | [ ] | [ ] | [ ] |
+| Monetisation model & pricing | [ ] | [ ] | [ ] | [ ] |
+| Release timing & platform selection | [ ] | [ ] | [ ] | [ ] |
+
+*If any column indicates publisher/funder control over core pillars or release, independence classification defaults to I2/I3 regardless of IP ownership.*
+
 #### Other Sources
 
-**Q14. Additional Support Sources**
+**Q15. Additional Support Sources**
 Select all that apply and provide amounts/details:
 
 Platform Holder Support:
@@ -1533,7 +1561,7 @@ Technology Partners:
 **Publisher Rating: AA (85 points)**
 
 **Other Sources:**
-- Q14: Epic MegaGrant ($250K) → BBB-tier indicator (65 points)
+- Q15: Epic MegaGrant ($250K) → BBB-tier indicator (65 points)
 
 **Calculation:**
 Using weighted floor-and-ceiling methodology (Section 7.3):
@@ -2128,6 +2156,17 @@ The framework will evolve as the industry changes. This section outlines the con
 - **Fee alignment**: Renewal costs mirror the verification level—self-report free, Verified covers administrative review, Audited fees paid directly to the auditor. Registries should publish schedules so studios know what to expect per tier.
 - **Non-response handling**: Projects that skip renewal grace periods have their badges hidden until they re-verify, preventing stale public listings.
 - **Feedback loop**: This operational model is in public consultation; adopters are asked to report costs, workload, and abuse cases so the governance body can refine requirements before they become mandatory.
+
+#### Dispute Resolution and Appeals
+
+Projects may dispute ratings or verification decisions within **30 days** of issuance by submitting additional evidence to the GPCS registry. Each dispute is reviewed by an **independent triad**: one registry representative plus two external experts with no affiliation to the project or original auditor. The panel can uphold, adjust, or revoke the rating and may request additional verification or a new audit. Decisions are communicated within 30 days and are binding; frivolous or repetitive disputes without new evidence may result in temporary submission restrictions. Registry entries display a "Dispute Pending" flag while a case is under review.
+
+#### Auditor Accreditation and Oversight
+
+- **Minimum qualifications:** Approved auditors must hold a relevant professional credential (CPA/CA or recognised industry audit certification), possess **5+ years** of experience with game industry finance or production audits, and complete the GPCS auditor training module covering methodology, confidentiality, and evidence standards.
+- **Conflict-of-interest policy:** Auditors must disclose any financial interest (>1% equity), employment/contractor history within the previous 24 months, or advisory relationships with a project before accepting an engagement. Auditors with disqualifying conflicts are reassigned; violations trigger immediate suspension and rating review.
+- **Removal process:** Complaints (misrepresentation, negligence, COI breaches) initiate an investigation by the governance oversight group. Auditors receive notice and have 15 days to respond. Confirmed violations lead to removal from the approved list, public disclosure of the reason, and revocation/re-audit of affected ratings where necessary.
+- **Ongoing compliance:** Auditors renew accreditation annually by completing refresher training and providing proof of professional standing. The registry conducts random spot checks (minimum 5% of audited ratings per year) to ensure evidence quality. Repeated deficiencies lead to remediation requirements or removal.
 
 #### Decision Authority (Current: Single Maintainer)
 
